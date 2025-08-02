@@ -88,16 +88,13 @@ const Form = () => {
     // Set font and size
     doc.setFontSize(24);
     doc.setFont('helvetica', 'bold');
-    doc.text('Resume', 105, 20, { align: 'center' });
+   
     
     // Add line separator
     doc.setLineWidth(0.5);
     doc.line(20, 30, 190, 30);
     
-    // Personal Information
-    doc.setFontSize(16);
-    doc.setFont('helvetica', 'bold');
-    doc.text('Personal Information', 20, 45);
+    
     
     doc.setFontSize(12);
     doc.setFont('helvetica', 'normal');
@@ -264,7 +261,7 @@ const Form = () => {
         </div>
       </form>
       
-     
+
       <ModalPreview
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
