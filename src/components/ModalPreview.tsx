@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import Image from 'next/image';
+import Image from "next/image";
 import jsPDF from "jspdf";
 
 interface FormData {
@@ -24,11 +24,6 @@ const ModalPreview: React.FC<ModalPreviewProps> = ({
 }) => {
   const generatePDF = () => {
     const doc = new jsPDF();
-
-   
-
-
-    
 
     doc.setFontSize(12);
     doc.setFont("helvetica", "normal");
@@ -73,63 +68,40 @@ const ModalPreview: React.FC<ModalPreviewProps> = ({
           </button>
         </div>
 
-        {/* PDF Preview Content */}
         <div className="p-6">
           <div className="bg-gray-50 p-6 rounded-lg border min-h-[500px]">
             
-            
-            {/* Personal Information */}
-            <div className="mb-6">
-              <h2 className="text-xl font-bold text-gray-800 mb-4 flex items-center">
-                <Image src="/assets/icons/user.svg" alt="User" width={24} height={24} className="mr-2" />
-                Personal Information
-              </h2>
-              <div className="space-y-3">
-                <div className="flex items-center">
-                  <Image src="/assets/icons/user.svg" alt="User" width={16} height={16} className="mr-3" />
-                  <span className="font-semibold w-20">Name:</span>
-                  <span className="text-gray-700">{formData.name}</span>
-                </div>
-                <div className="flex items-center">
-                  <Image src="/assets/icons/mail.svg" alt="Email" width={16} height={16} className="mr-3" />
-                  <span className="font-semibold w-20">Email:</span>
-                  <span className="text-gray-700">{formData.email}</span>
-                </div>
-                <div className="flex items-center">
-                  <Image src="/assets/icons/phone-call.svg" alt="Phone" width={16} height={16} className="mr-3" />
-                  <span className="font-semibold w-20">Phone:</span>
-                  <span className="text-gray-700">{formData.phone}</span>
-                </div>
-                {formData.position && (
-                  <div className="flex items-center">
-                    <Image src="/assets/icons/position.svg" alt="Position" width={16} height={16} className="mr-3" />
-                    <span className="font-semibold w-20">Position:</span>
-                    <span className="text-gray-700">{formData.position}</span>
-                  </div>
-                )}
-              </div>
-            </div>
 
-
-            {/* Description */}
             {formData.description && (
-               <div className="flex items-center">
-               <Image src="/assets/icons/position.svg" alt="Position" width={16} height={16} className="mr-3" />
-               <span className="font-semibold w-20">Description:</span>
-               <span className="text-gray-700 ml-2">{formData.description}</span>
-             </div>
+              <div className="flex items-center">
+                <Image
+                  src="/assets/icons/position.svg"
+                  alt="Position"
+                  width={16}
+                  height={16}
+                  className="mr-3"
+                />
+                <span className="font-semibold w-20">Description:</span>
+                <span className="text-gray-700 ml-2">
+                  {formData.description}
+                </span>
+              </div>
             )}
-          
           </div>
         </div>
 
-        {/* Footer with Download Button */}
         <div className="flex justify-end p-6 ">
           <button
             onClick={generatePDF}
             className="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition-colors flex items-center"
           >
-            <Image src="/assets/icons/Download.svg" alt="Download" width={20} height={20} className="mr-2" />
+            <Image
+              src="/assets/icons/Download.svg"
+              alt="Download"
+              width={20}
+              height={20}
+              className="mr-2"
+            />
             Download PDF
           </button>
         </div>
