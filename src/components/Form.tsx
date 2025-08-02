@@ -1,5 +1,6 @@
 "use client"
 import React, { useState } from 'react'
+import Image from 'next/image'
 import ModalPreview from './ModalPreview'
 import jsPDF from 'jspdf'
 interface FormData {
@@ -144,7 +145,8 @@ const Form = () => {
       <form className="space-y-6">
         {/* Name Field */}
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+          <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2 flex items-center">
+            <Image src="/assets/icons/user.svg" alt="User" width={20} height={20} className="mr-2" />
             Name *
           </label>
           <input
@@ -165,7 +167,8 @@ const Form = () => {
 
         {/* Email Field */}
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2 flex items-center">
+            <Image src="/assets/icons/mail.svg" alt="Email" width={20} height={20} className="mr-2" />
             Email *
           </label>
           <input
@@ -186,7 +189,8 @@ const Form = () => {
 
         {/* Phone Number Field */}
         <div>
-          <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+          <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2 flex items-center">
+            <Image src="/assets/icons/phone-call.svg" alt="Phone" width={20} height={20} className="mr-2" />
             Phone Number *
           </label>
           <input
@@ -207,7 +211,8 @@ const Form = () => {
 
         {/* Position Field */}
         <div>
-          <label htmlFor="position" className="block text-sm font-medium text-gray-700 mb-2">
+          <label htmlFor="position" className="block text-sm font-medium text-gray-700 mb-2 flex items-center">
+            <Image src="/assets/icons/position.svg" alt="Position" width={20} height={20} className="mr-2" />
             Position
           </label>
           <input
@@ -223,7 +228,8 @@ const Form = () => {
 
         {/* Description Field */}
         <div>
-          <label htmlFor="description" className="block text-sm font-medium text-gray-700 mb-2">
+          <label htmlFor="description" className="block text-sm font-medium text-gray-700 mb-2 flex items-center">
+            <Image src="/assets/icons/Description.svg" alt="Description" width={20} height={20} className="mr-2" />
             Description
           </label>
           <textarea
@@ -242,15 +248,17 @@ const Form = () => {
           <button
             type="button"
             onClick={handleViewPDF}
-            className="flex-1 bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors"
+            className="flex-1 bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors flex items-center justify-center"
           >
+            <Image src="/assets/icons/view.svg" alt="View" width={20} height={20} className="mr-2" />
             View PDF
           </button>
           <button
             type="button"
             onClick={handleDownloadPDF}
-            className="flex-1 bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition-colors"
+            className="flex-1 bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition-colors flex items-center justify-center"
           >
+            <Image src="/assets/icons/Download.svg" alt="Download" width={20} height={20} className="mr-2" />
             Download PDF
           </button>
         </div>
