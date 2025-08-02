@@ -73,7 +73,7 @@ const ModalPreview: React.FC<ModalPreviewProps> = ({
     <div className="fixed inset-0 bg-black/60  backdrop-blur-sm bg-opacity-50 flex items-center justify-center z-50">
       <div className="bg-white rounded-lg shadow-xl max-w-2xl w-full mx-4 max-h-[90vh] overflow-y-auto">
         {/* Header */}
-        <div className="flex justify-end items-center p-6 border-b">
+        <div className="flex justify-end items-center p-6 ">
           <button
             onClick={onClose}
             className="text-gray-500 hover:text-red-700 cursor-pointer text-2xl font-bold"
@@ -85,11 +85,7 @@ const ModalPreview: React.FC<ModalPreviewProps> = ({
         {/* PDF Preview Content */}
         <div className="p-6">
           <div className="bg-gray-50 p-6 rounded-lg border min-h-[500px]">
-            {/* Resume Header */}
-            <div className="text-center mb-6">
-              <h1 className="text-3xl font-bold text-gray-800 mb-2">Resume</h1>
-              <div className="w-full h-px bg-gray-300"></div>
-            </div>
+            
             
             {/* Personal Information */}
             <div className="mb-6">
@@ -123,25 +119,21 @@ const ModalPreview: React.FC<ModalPreviewProps> = ({
               </div>
             </div>
 
+
             {/* Description */}
             {formData.description && (
-              <div>
-                <h2 className="text-xl font-bold text-gray-800 mb-3 flex items-center">
-                  <Image src="/assets/icons/Description.svg" alt="Description" width={24} height={24} className="mr-2" />
-                  Description
-                </h2>
-                <div className="bg-white p-4 rounded-lg border">
-                  <p className="text-gray-700 whitespace-pre-wrap leading-relaxed">
-                    {formData.description}
-                  </p>
-                </div>
-              </div>
+               <div className="flex items-center">
+               <Image src="/assets/icons/position.svg" alt="Position" width={16} height={16} className="mr-3" />
+               <span className="font-semibold w-20">Description:</span>
+               <span className="text-gray-700 ml-2">{formData.description}</span>
+             </div>
             )}
+          
           </div>
         </div>
 
         {/* Footer with Download Button */}
-        <div className="flex justify-end p-6 border-t">
+        <div className="flex justify-end p-6 ">
           <button
             onClick={generatePDF}
             className="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition-colors flex items-center"
